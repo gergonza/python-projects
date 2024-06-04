@@ -1,0 +1,1 @@
+Instalar en vez de la versión 3 pyttsx, instalar la versión 4 (pyttsx4) ya que la 3 da error cuando inicia el programa

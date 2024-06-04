@@ -1,0 +1,68 @@
+Crear Entorno Virtual:
+
+Cuando se crea el entorno, se deben agregar permisos de escritura sobre los archivos activate:
+
+chmod 777 p1/bin/activate*
+
+Y para arrancar el entorno se debe ejecutar:
+
+source ./p1/bin/activate
+
+Y para detenerlo se debe ejecutar:
+
+deactivate
+
+Crear Web:
+
+Primero se debe instalar Django dentro del entorno:
+
+pip install django
+
+Para comprobar que se instaló correctamente, ejecutar el comando pip frece, el cual debe mostrar lo siguiente:
+
+asgiref==3.6.0
+Django==4.2.1
+sqlparse==0.4.4
+
+La versión de cada paquete es la última a la fecha (20-05-2023)
+
+Luego, dentro de la carpeta del entorno, se debe crear la carpeta src (con mkdir src)
+
+Moverse a la carpeta src y ejecutar el siguiente comando para activar django:
+
+django-admin startproject <nombre del proyecto>
+
+Dentro de la carpeta src debe crearse una subcarpeta con el nombre del proyecto
+
+Moverse a esa carpeta
+
+Luego, se debe crear el usuario administrador del sitio:
+
+python manage.py createsuperuser
+
+Y arrancar el servidor web:
+
+python manage.py runserver
+
+Para detener la ejecución del servidor, ejecutar la combinación Ctrl+C
+
+Si aparece el siguiente mensaje:
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+Se debe ejecutar el siguiente comando para solucionarlo:
+
+python manage.py migrate
+
+Pasos en PyCharm:
+
+Si tienes instalado Python3 en todo comando de Python usar python3, de igual puedes intentar usar el comando Python, en caso de no reconocerlo, intentar lo dicho en primer lugar
+
+Por defecto, el proyecto se agrega a PyCharm sin entorno, hay que agregárselo en la siguiente ruta: Pycharm >> Settings >> Python Interpreter >> Add Interpreter >> Add Local Interpreter >> Seleccionar en Environment la opción Existing >> Pulsar el botón ... para buscar el entorno en el sistema de archivos >> Seleccionar el archivo Python presente en la ruta <Nombre de Entorno>/bin >> Presionar OK >> Presionar OK >> Presionar Apply >> Presionar Ok
+
+Reiniciar la consola si ya estaba abierta
+
+Ejecutar el comando pip freeze para comprobar si la paquetería agregada al entorno apareces
+
+Importante, por cada cambio realizado al sitio web, se recomienda reiniciar el servidor

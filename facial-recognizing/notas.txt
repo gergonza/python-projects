@@ -1,0 +1,25 @@
+El código no funciona en PyCharm debido a que no se activa la cámara, debe ejecutarse en terminal, para ello deben
+realizarse los siguientes pasos:
+
+1. Ejecutar el comando ARCHFLAGS="-arch arm64" pip install cmake --compile --no-cache-dir para instalar la biblioteca cmake
+1. Ejecutar el comando ARCHFLAGS="-arch arm64" pip install wheel --compile --no-cache-dir para instalar la biblioteca wheel
+2. Ejecutar el comando ARCHFLAGS="-arch arm64" pip install dlib --compile --no-cache-dir para instalar la biblioteca dlib
+3. Ejecutar el comando ARCHFLAGS="-arch arm64" pip install face-recognition --compile --no-cache-dir para instalar la biblioteca face-recognition
+4. Ejecutar el comando ARCHFLAGS="-arch arm64" pip install numpy --compile --no-cache-dir para instalar la biblioteca numpy
+5. Ejecutar el comando ARCHFLAGS="-arch arm64" pip install opencv-python --compile --no-cache-dir para instalar la biblioteca numpy
+
+En caso de errores de compatibilidad de librerías relacionadas con dlib, ejecutar en secuencia estos comandos:
+
+brew install libpng
+export C_INCLUDE_PATH=/opt/homebrew/Cellar/libpng/1.6.37/include
+export LIBRARY_PATH=/opt/homebrew/Cellar/libpng/1.6.37/lib
+pip3 install dlib --force-reinstall
+
+En caso de algún problema con librería debido a arquitectura, reinstalar las librerías después de solucionado el problema con el siguiente comando:
+pip3 install <librería> --force-reinstall
+
+------------------------------------------
+
+En el caso del código fuente asistencia.py, siempre que se solicite la captura de pantalla
+para MacOs sólo llamar a la función cv2.VideoCapture con el primer parámetro en valor 0, no
+indicar la fuente del video para que pueda tomar la captura, previa autorización
