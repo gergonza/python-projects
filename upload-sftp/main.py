@@ -2,7 +2,7 @@ import paramiko
 from paramiko import SSHClient
 
 # Store Variables
-localPath = '/Users/germangonzalez/Documents/Repositorios/python-projects/upload-sftp/pythonProject/test.txt'
+localPath = '/Users/germangonzalez/Documents/Repositorios/python-projects/upload-sftp/test.txt'
 remotePath = '/sftp/test.txt'
 
 # Configure Client
